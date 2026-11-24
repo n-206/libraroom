@@ -23,8 +23,7 @@ create table profile_settings (
 
 create table sessions_settings (
     account_id bigint unsigned not null primary key,
-    session_timeout int not null default 3600 comment 'in minutes',
-    logout_policy enum('immediate', 'delayed', 'never') not null default 'delayed',
+    idle_timeout_seconds int unsigned not null default 2592000 comment 'idle timeout in seconds; default is 30 days' check (idle_timeout_seconds > 0),
     updated_at timestamp not null default current_timestamp on update current_timestamp,
 
     foreign key (account_id) references accounts(account_id) on delete cascade
@@ -46,7 +45,7 @@ create table books (
     isbn varchar(13) not null unique,
     title varchar(255) not null,
     author varchar(255),
-    page_count int,
+    page_count smallint unsigned,
     cover_image_url varchar(255),
     created_at timestamp not null default current_timestamp,
     updated_at timestamp not null default current_timestamp on update current_timestamp,
@@ -56,8 +55,8 @@ create table user_books (
     account_id bigint unsigned not null,
     book_id bigint unsigned not null,
     status enum('read', 'reading', 're-reading', 'want_to_read', 'abandoned') not null default 'want_to_read',
-    rating int check (rating >= 1 and rating <= 5),
-    current_page int unsigned check (current_page >= 0),
+    rating tinyint unsigned check (rating >= 1 and rating <= 5),
+    current_page smallint unsigned,
     notes text,
     started_at timestamp,
     finished_at timestamp,
