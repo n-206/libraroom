@@ -1,0 +1,91 @@
+*{
+    --gap-sm: 0.25rem;
+    --gap-md: 0.5rem;
+    --gap-lg: 1.0rem;
+
+    --border-color: #1a1a1a;
+    --background-color-light: #eaeaea;
+    --background-color-light-alt: #b0b0b0;
+
+
+    font-family: Libre Calson;
+    border-radius: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: Libre Calson;
+    src: url(librecalson.ttf);
+}
+
+body{ 
+    background-color: var(--background-color-light);
+    margin: 0;
+    height: 100vh;
+}
+
+main{
+    display: grid;
+    grid-template-columns: 256px 1fr;
+    min-height: calc(100vh - 64px);
+}
+
+header{
+    position: sticky;
+    top: 0;
+    z-index: 1;
+
+    height: 64px;
+    padding: var(--gap-lg);
+    background-color: var(--background-color-light-alt);
+    border-bottom: 2px solid var(--border-color);
+
+    display: flex;
+    flex-direction: row nowrap;
+    align-items: center;
+}
+
+nav{
+    display: flex;
+    width: 100%;
+    gap: var(--gap-md);
+}
+
+.nav-fill{
+    width: 100%;
+}
+
+aside{
+    position: sticky;
+    left: 0;
+    top: 64px;
+    height: calc(100vh - 64px);
+    min-width: 256px;
+    width: 15%;
+
+    padding: var(--gap-lg);
+    background-color: var(--background-color-light-alt);
+    border-right: 2px solid var(--border-color);
+    
+    display: flex;
+    flex-flow: column nowrap;
+    gap: var(--gap-md);
+}
+
+section{
+    padding: var(--gap-lg);
+}
+
+.card-container{
+    display: flex;
+    flex-direction: column nowrap;
+    gap: var(--gap-md);
+}
+
+.card{
+    border: 2px solid var(--border-color);
+    width: 200px;
+    height: 200px;
+    background-color: var(--background-color-light-alt);
+}
