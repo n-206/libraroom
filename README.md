@@ -10,7 +10,7 @@ A kommunikáció egy külön erre a célra létrehozott discord csoportban zajli
 
 ## Licenc
 
-Úgy döntöttünk, hogy a project Apache 2.0 licenc-et használjon, hogy így open source maradjon, de bárki tudja használni. \
+Úgy döntöttünk, hogy a project Apache 2.0 licencet használjon, hogy így open source maradjon, de bárki tudja használni. \
 Továbbiak megtalálhatóak itt: [`License`](LICENSE)
 
 ## Design Document
