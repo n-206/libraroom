@@ -1,3 +1,1 @@
-IF database exists 'shelf' THEN
-    DROP DATABASE shelf;
-END IF;
+DROP DATABASE IF EXISTS shelf;
