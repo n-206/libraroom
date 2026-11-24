@@ -1,4 +1,4 @@
-# Libroroom
+# Libraroom
 
 ## Dokumentáció
 
